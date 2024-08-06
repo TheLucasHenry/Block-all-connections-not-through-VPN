@@ -26,8 +26,8 @@ if not %errorlevel% equ 0 (
 
 REM Path testing // kiểm tra đường dẫn
 if not exist "%warp-loc%" (
-	echo Default Cloudflare WARP folder: "C:\Program Files\Cloudflare\Cloudflare WARP"
-	echo Cloudflare WARP folder not found.
+    echo Default Cloudflare WARP folder: "C:\Program Files\Cloudflare\Cloudflare WARP"
+    echo Cloudflare WARP folder not found.
     timeout 4
     exit
 )
