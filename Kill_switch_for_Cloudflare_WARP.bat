@@ -5,7 +5,6 @@ set ruleCli=WARP Command Line Interface Executable
 set ruleDex=WARP Diagnostics Extended Executable
 set ruleDiag=WARP Diagnostics Executable
 set ruleSvc=WARP Service Executable
-set testScore=0
 
 set "warp-loc=C:\Program Files\Cloudflare\Cloudflare WARP"
 set "warp-main=%warp-loc%\Cloudflare WARP.exe"
