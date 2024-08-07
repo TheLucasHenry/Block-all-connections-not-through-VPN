@@ -1,16 +1,16 @@
 Disconnect from WARP and run the batch file with administrative privileges: 
 
 
-  press 1 to enable.
+  SELECT 1 to enable.
 
   
-  press 2 to disable.
+  SELECT 2 to disable.
 
   
-  press 3 to run a realtime connection test.
+  SELECT 3 to run a realtime connection test.
 
   
-  press 4 to exit.
+  SELECT 4 to exit.
 
 
 
