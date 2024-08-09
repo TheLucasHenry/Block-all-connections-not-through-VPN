@@ -36,6 +36,7 @@ REM Main menu // Menu chính
 :menu
 cls
 echo Please disable WARP to proceed!
+echo Reboot the device if there's no network connectivity after re-enabling WARP!
 REM List // danh sách
 echo Kill Switch:
 echo 1. Turn On
@@ -57,6 +58,48 @@ if "%choice%"=="4" goto exit
 :on
 echo You have chosen TURN ON.
 
+cls
+REM List // danh sách
+echo Kill Switch model:
+echo 1. Limit
+echo 2. Full
+echo 3. Back to menu
+
+REM To give options // đưa ra lựa chọn
+choice /c 123 /n /m "Please enter your selection (1, 2 or 3): "
+set "choiceModel=%errorlevel%"
+
+cls
+REM To execute a choice // thực thi lựa chọn
+if "%choiceModel%"=="1" goto onLimit
+if "%choiceModel%"=="2" goto onFull
+if "%choiceModel%"=="3" goto menu
+
+:onLimit
+REM Check the firewall to see if there is an outbound rule named 'Cloudflare WARP'. // Kiểm tra tường lửa xem có luật đầu ra nào tên "Cloudflare WARP" đã tồn tại chưa.
+netsh advfirewall firewall show rule name="%ruleSvc%" dir=out | find /I "%ruleSvc%" >nul
+if %errorlevel%==0 (
+    echo Outbound Rules have been created. Moving on to the next step...
+) else (
+    echo Creating Outbound Rules...
+    netsh advfirewall firewall add rule name="%ruleSvc%" dir=out action=%action% program="%warp-svc%" enable=yes profile=%profile%
+    echo Outbound Rules have been successfully created. Moving on to the next step.
+)
+
+REM Set inbound and outbound connections to Block for Private profile. // Đặt kết nối đầu vào và đầu ra thành Chặn cho cấu hình mạng Riêng tư.
+netsh advfirewall set domainprofile firewallpolicy blockinbound,blockoutbound
+echo Domain profile has been set to block inbound and outbound connections.
+
+netsh advfirewall set privateprofile firewallpolicy blockinbound,blockoutbound
+echo Private profile has been set to block inbound and outbound connections.
+
+REM Set the network profile type to Private. // Cài đặt loại cấu hình mạng thành Riêng tư.
+powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
+echo Network profile type has been set to Private.
+timeout 4
+goto menu
+
+:onFull
 REM Check the firewall to see if there is an outbound rule named 'Cloudflare WARP'. // Kiểm tra tường lửa xem có luật đầu ra nào tên "Cloudflare WARP" đã tồn tại chưa.
 netsh advfirewall firewall show rule name="%ruleMain%" dir=out | find /I "%ruleMain%" >nul
 if %errorlevel%==0 (
@@ -124,6 +167,7 @@ echo The domain profile has been configured to block incoming connections and al
 netsh advfirewall set privateprofile firewallpolicy blockinbound,allowoutbound
 echo The Private profile has been configured to block incoming connections and allow outgoing ones.
 
+netsh advfirewall firewall delete rule name="Cloudflare WARP" Direction=out
 netsh advfirewall firewall delete rule name="%ruleMain%" Direction=out
 netsh advfirewall firewall delete rule name="%ruleCli%" Direction=out
 netsh advfirewall firewall delete rule name="%ruleDex%" Direction=out
