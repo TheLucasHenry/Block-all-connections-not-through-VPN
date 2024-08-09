@@ -98,6 +98,7 @@ echo Private profile has been set to block inbound and outbound connections.
 REM Set the network profile type to Private. // Cài đặt loại cấu hình mạng thành Riêng tư.
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
+echo Please turn WARP back on after about 10 seconds!
 timeout /t 10 /nobreak
 goto menu
 
@@ -129,6 +130,7 @@ echo Private profile has been set to block inbound and outbound connections.
 REM Set the network profile type to Private. // Cài đặt loại cấu hình mạng thành Riêng tư.
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
+echo Please turn WARP back on after about 10 seconds!
 timeout /t 10 /nobreak
 goto menu
 
@@ -185,6 +187,7 @@ echo Private profile has been set to block inbound and outbound connections.
 REM Set the network profile type to Private. // Cài đặt loại cấu hình mạng thành Riêng tư.
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
+echo Please turn WARP back on after about 10 seconds!
 timeout /t 10 /nobreak
 goto menu
 
