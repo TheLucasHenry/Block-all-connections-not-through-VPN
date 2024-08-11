@@ -37,8 +37,16 @@ REM Main menu // Menu chính
 cls
 echo Please disable WARP to proceed!
 echo Reboot the device if there's no network connectivity after re-enabling WARP!
-REM List // danh sách
 echo Kill Switch:
+REM Status check // kiểm tra trạng thái
+netsh advfirewall firewall show rule name="%ruleSvc%" dir=out | find /I "%ruleSvc%" >nul
+if %errorlevel%==0 (
+    echo Status: active
+) else (
+    echo Status: disabled
+)
+REM List // danh sách
+echo Menu:
 echo 1. Turn On
 echo 2. Turn Off
 echo 3. Check Connection
