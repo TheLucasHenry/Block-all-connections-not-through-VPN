@@ -38,7 +38,7 @@ cls
 echo Please disable WARP to proceed!
 echo Reboot the device if there's no network connectivity after re-enabling WARP!
 echo Kill Switch:
-REM Status check // kiểm tra trạng thái
+REM status check // kiểm tra trạng thái
 netsh advfirewall firewall show rule name="%ruleSvc%" dir=out | find /I "%ruleSvc%" >nul
 if %errorlevel%==0 (
     echo Status: active
@@ -107,7 +107,7 @@ REM Set the network profile type to Private. // Cài đặt loại cấu hình m
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
 echo Please turn WARP back on after about 10 seconds!
-timeout /t 10 /nobreak
+timeout /t 5 /nobreak
 goto menu
 
 :onHigh
@@ -139,7 +139,7 @@ REM Set the network profile type to Private. // Cài đặt loại cấu hình m
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
 echo Please turn WARP back on after about 10 seconds!
-timeout /t 10 /nobreak
+timeout /t 5 /nobreak
 goto menu
 
 :onStandard
@@ -196,7 +196,7 @@ REM Set the network profile type to Private. // Cài đặt loại cấu hình m
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias '*' -NetworkCategory Private"
 echo Network profile type has been set to Private.
 echo Please turn WARP back on after about 10 seconds!
-timeout /t 10 /nobreak
+timeout /t 5 /nobreak
 goto menu
 
 :off
