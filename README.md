@@ -1,7 +1,7 @@
 Disconnect from WARP and run the batch file with administrative privileges: 
 
 
- +SELECT 1 to enable. (Please wait at least 10 seconds after activating the kill switch before re-enabling WARP!)
+ +SELECT 1 to enable. (Please wait at least 5 seconds after activating the kill switch before re-enabling WARP!)
  
  +SELECT 2 to disable.
  
