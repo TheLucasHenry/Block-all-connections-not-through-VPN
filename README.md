@@ -1,4 +1,4 @@
-# Kill Switch for Cloudflare WARP
+# "Kill Switch" for Cloudflare WARP
 
 **Instructions:**
 
