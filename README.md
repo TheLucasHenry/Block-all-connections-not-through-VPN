@@ -1,14 +1,11 @@
-Disconnect from WARP and run the batch file with administrative privileges: 
+# Kill Switch for Cloudflare WARP
 
+**Instructions:**
 
- +SELECT 1 to enable. (Please wait at least 5 seconds after activating the kill switch before re-enabling WARP!)
- 
- +SELECT 2 to disable.
- 
- +SELECT 3 to run a realtime connection test.
- 
- +SELECT 4 to exit.
+1. **Disconnect WARP:** Before running this script, ensure you have manually disconnected Cloudflare WARP from the Cloudflare client application.
+2. **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP.bat` file and select "Run as administrator".
 
+**Note:** This script is designed to act as a kill switch, blocking any connections that do not go through Cloudflare WARP. Use with caution and at your own risk.
 
 To ensure it works, you can visit and follow the instructions on this website:
 https://www.top10vpn.com/guides/vpn-kill-switch/
