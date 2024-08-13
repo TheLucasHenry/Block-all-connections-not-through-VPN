@@ -66,7 +66,7 @@ cls
 echo Kill Switch Modes
 echo. & echo  Please select a security mode: &echo.
 echo   1. Maximum Security (Increased latency, Zero Trust, WARP updates off)
-echo   2. High Security (Network restrictions)
+echo   2. High Security (Zero Trust-compatible)
 echo   3. Standard Security (Reliable, protected)
 echo   4. Return to main menu
 echo.
