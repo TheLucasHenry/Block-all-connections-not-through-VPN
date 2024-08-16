@@ -3,7 +3,7 @@
 **Instructions:**
 
 1. **Disconnect WARP:** Before running this script, ensure you have manually disconnected Cloudflare WARP from the Cloudflare client application.
-2. **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP.bat` file and select "Run as administrator".
+2. **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP_X_X.bat` file and select "Run as administrator".
 
 **Note:** This script is designed to act as a kill switch, blocking any connections that do not go through Cloudflare WARP. Use with caution and at your own risk.
 
