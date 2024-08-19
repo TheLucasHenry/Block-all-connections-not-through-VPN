@@ -132,7 +132,7 @@ echo    Network profile type has been set to Private.
 REM exclude CloudflareWARP // loại trừ con CloudflareWARP này ra phải để Public nó mới chay được
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias 'CloudflareWARP' -NetworkCategory Public" >nul
 echo    CloudflareWARP profile type has been set to Public.
-
+echo.
 timeout /t 4
 goto menu
 
@@ -178,7 +178,7 @@ echo    Network profile type has been set to Private.
 REM exclude CloudflareWARP // loại trừ con CloudflareWARP này ra phải để Public nó mới chay được
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias 'CloudflareWARP' -NetworkCategory Public" >nul
 echo    CloudflareWARP profile type has been set to Public.
-
+echo.
 timeout /t 4
 goto menu
 
@@ -245,7 +245,7 @@ echo    Network profile type has been set to Private.
 REM exclude CloudflareWARP // loại trừ con CloudflareWARP này ra phải để Public nó mới chay được
 powershell -Command "Set-NetConnectionProfile -InterfaceAlias 'CloudflareWARP' -NetworkCategory Public" >nul
 echo    CloudflareWARP profile type has been set to Public.
-
+echo.
 timeout /t 4
 goto menu
 
