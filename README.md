@@ -3,7 +3,8 @@
 **Instructions:**
 
    **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP_X_X.bat` file and select "Run as administrator".
-
+   
+**Important:**: With this configuration, even if you connect to other VPNs, the firewall will still block those connections while the killswitch is enabled.
 **Note:** This script is designed to act as a kill switch using Windows Defender Firewall with Advanced Security, blocking any connections that do not go through Cloudflare WARP. Use with caution and at your own risk.
 
 To ensure it works, you can visit and follow the instructions on this website:
