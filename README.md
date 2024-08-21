@@ -2,7 +2,7 @@
 
 **Instructions:**
 
-1. **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP_X_X.bat` file and select "Run as administrator".
+   **Run as Administrator:** Right-click on the `Kill_switch_for_Cloudflare_WARP_X_X.bat` file and select "Run as administrator".
 
 **Note:** This script is designed to act as a kill switch using Windows Defender Firewall with Advanced Security, blocking any connections that do not go through Cloudflare WARP. Use with caution and at your own risk.
 
