@@ -1,4 +1,4 @@
-# "Kill Switch" for Any VPN
+# "Kill Switch" for Any VPN Project
 
 **Instructions:**
 
