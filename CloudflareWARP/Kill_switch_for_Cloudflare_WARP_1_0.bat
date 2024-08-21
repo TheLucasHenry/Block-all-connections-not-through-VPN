@@ -99,7 +99,9 @@ echo.
 REM Check the firewall to see if there is an outbound rule named 'Cloudflare WARP'. // Kiểm tra tường lửa xem có luật đầu ra nào tên "Cloudflare WARP" đã tồn tại chưa.
 netsh advfirewall firewall show rule name="%ruleSvc%" dir=out | find /I "%ruleSvc%" >nul
 if %errorlevel%==0 (
-    echo    Outbound rule named "%ruleSvc%" has been created. Moving on to the next step...
+    netsh advfirewall firewall delete rule name="%ruleSvc%" Direction=out >nul
+	netsh advfirewall firewall add rule name="%ruleSvc%" dir=out action=%action% program="%warp-svc%" enable=yes profile=%profile% >nul
+    echo    Outbound Rules name="%ruleSvc%" have been re-created successfully.
 ) else (
     netsh advfirewall firewall add rule name="%ruleSvc%" dir=out action=%action% program="%warp-svc%" enable=yes profile=%profile% >nul
     echo    Outbound Rules name="%ruleSvc%" have been successfully created.
